@@ -1,0 +1,25 @@
+def type_triangle(a, b, c):
+    # Vérification si les côtés a, b, c forment un triangle
+    if (a + b > c) and (a + c > b) and (b + c > a):
+        # Vérification si le triangle est équilatéral
+        if a == b == c:
+            return "Le triangle est équilatéral."
+        # Vérification si le triangle est isocèle
+        elif a == b or b == c or a == c:
+            # Vérification si le triangle est rectangle en utilisant le théorème de Pythagore
+            if (a**2 + b**2 == c**2) or (a**2 + c**2 == b**2) or (b**2 + c**2 == a**2):
+                return "Le triangle est isocèle et rectangle."
+            else:
+                return "Le triangle est isocèle mais non rectangle."
+        # Si le triangle n'est ni équilatéral ni isocèle, alors il est quelconque
+        else:
+            return "Le triangle est quelconque."
+    # Si les côtés ne forment pas un triangle, retourner une erreur
+    else:
+        return "Les longueurs des côtés ne permettent pas de former un triangle."
+
+print(type_triangle(3, 4, 5)) # Le triangle est rectangle et isocèle.
+print(type_triangle(5, 5, 5)) # Le triangle est équilatéral.
+print(type_triangle(5, 7, 5)) # Le triangle est isocèle mais pas rectangle.
+print(type_triangle(1, 2, 3)) # Impossible de construire un triangle avec ces longueurs.
+

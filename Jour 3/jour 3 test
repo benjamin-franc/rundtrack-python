@@ -1,0 +1,6 @@
+for i in range(100):
+    print ("bonjour")
+
+while i <100:
+    print ("bonjour")
+    i+=1
